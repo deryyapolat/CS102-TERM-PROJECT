@@ -10,11 +10,11 @@ public class PlayerA {
 
     public void updateX(int value)
     {
-        this.x += value;
+        x += value;
     }
 
     public void updateY(int value)
     {
-        this.y += value;
+        y += value;
     }
 }
