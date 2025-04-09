@@ -11,11 +11,11 @@ public class GamePanel extends JPanel implements Runnable {
     final int screenWidth = 1280;
     final int screenHeight = 720;
     
+    PlayerA playerA;
+    PlayerB playerB;
     Thread gameThread;
     KeyHandlerA listenerA = new KeyHandlerA();
     KeyHandlerB listenerB = new KeyHandlerB();
-    PlayerA playerA= new PlayerA(this, listenerA);
-    PlayerB playerB = new PlayerB(this,listenerB);
     Image map1;
 
     public GamePanel()
@@ -27,6 +27,8 @@ public class GamePanel extends JPanel implements Runnable {
         this.addKeyListener(listenerA);
         this.addKeyListener(listenerB);
         this.setFocusable(true); //focused to key actions
+        this.playerA = new PlayerA(this, listenerA);
+        this.playerB = new PlayerB(this, listenerB);
     }
 
     public void startThread()
@@ -38,7 +40,7 @@ public class GamePanel extends JPanel implements Runnable {
     @Override
     public void run() {
 
-        double intervalOfDrawing = 1000000000/60;  //nanosecond / 60
+        double intervalOfDrawing = 1000000000/60;  // nanosecond / 60
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
@@ -60,22 +62,8 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void updateInfo()
     {
-        if(listenerA.moveUp == true)
-        {playerA.updateY(-10);}
-        else if (listenerA.moveDown == true)
-        {playerA.updateY(10);}
-        else if (listenerA.moveLeft == true)
-        {playerA.updateX(-10);}
-        else if (listenerA.moveRight == true)
-        {playerA.updateX(10);}
-        else if (listenerB.moveUp == true)
-        {playerB.updateY(-10);}
-        else if (listenerB.moveDown == true)
-        {playerB.updateY(10);}
-        else if (listenerB.moveLeft == true)
-        {playerB.updateX(-10);}
-        else if (listenerB.moveRight == true)
-        {playerB.updateX(10);}
+        playerA.moveUpdate();
+        playerB.moveUpdate();
     }
 
     public void paintComponent(Graphics g)
@@ -83,14 +71,7 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
 
         g.drawImage(map1, 0, 0, getFocusCycleRootAncestor());
-        
-        g.setColor(Color.WHITE);
-        g.fillRect(playerA.x,playerA.y,25,25);
-        
-
-        g.setColor(Color.RED);
-        g.fillRect(playerB.x,playerB.y,25,25);
-
-        
+        playerA.drawCharacter(g);
+        playerB.drawCharacter(g);
     }
 }
