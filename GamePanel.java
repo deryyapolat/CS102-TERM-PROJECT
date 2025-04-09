@@ -11,17 +11,15 @@ public class GamePanel extends JPanel implements Runnable {
     final int screenWidth = 1280;
     final int screenHeight = 720;
     
-    PlayerA playerA;
-    PlayerB playerB;
     Thread gameThread;
     KeyHandlerA listenerA = new KeyHandlerA();
     KeyHandlerB listenerB = new KeyHandlerB();
+    PlayerA playerA= new PlayerA(this, listenerA);
+    PlayerB playerB = new PlayerB(this,listenerB);
     Image map1;
 
-    public GamePanel(PlayerA a, PlayerB b)
+    public GamePanel()
     {
-        this.playerA = a;
-        this.playerB = b;
         this.map1 = new ImageIcon("map1.png").getImage();
         this.setPreferredSize(new Dimension(screenWidth,screenHeight));
         this.setBackground(Color.BLACK);
