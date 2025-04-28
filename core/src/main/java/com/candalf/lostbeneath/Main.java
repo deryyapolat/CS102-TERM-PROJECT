@@ -7,6 +7,6 @@ public class Main extends Game {
     @Override
     public void create() {
         Main game = Main.this;
-        setScreen(new FirstScreen(game));
+        setScreen(new MenuScreen(this));
     }
 }
