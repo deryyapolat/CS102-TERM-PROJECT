@@ -6,4 +6,8 @@ ui/buttons/optionsup.png
 ui/buttons/startdown.png
 ui/buttons/startup.png
 ui/mmbackground.png
+ui/options/keyswapicon.png
+ui/options/leaderboardicon.png
+ui/options/storylineicon.png
+ui/options/volumeicon.png
 ui/uiskin.json

@@ -2,11 +2,15 @@ package com.candalf.lostbeneath;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class MenuScreen extends AbstractScreen
@@ -15,6 +19,11 @@ public class MenuScreen extends AbstractScreen
     private ImageButton startButton;
     private ImageButton optionsButton;
     private ImageButton creditsButton;
+    private Window optionsWindow;
+    private boolean isOptionsOn = false;
+    private BitmapFont font;
+    private Group optionsOverlay;
+    private Table optionsTable;
 
     public MenuScreen(Main game)
     {
@@ -109,10 +118,14 @@ public class MenuScreen extends AbstractScreen
             }
         });
 
+        optionsOverlay = new Group();
+        optionsOverlay.setVisible(false);       // start hidden
+        stage.addActor(optionsOverlay);
+
         optionsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                //game.setScreen(new OptionsScreen((Game) game));
+                optionsOverlay.setVisible(!optionsOverlay.isVisible());
             }
         });
 
@@ -122,6 +135,64 @@ public class MenuScreen extends AbstractScreen
                 //game.setScreen(new CreditsScreen((Game) game));
             }
         });
+
+        optionsTable = new Table();
+        optionsTable.setPosition(
+                optionsButton.getX() + 80,
+                optionsButton.getY() + 40 + optionsButton.getHeight() + 20
+        );
+        optionsOverlay.addActor(optionsTable);
+
+        // Option texts + icon paths + click actions
+        String[] texts = { "LEADERBOARD", "VOLUME", "KEY SWAP", "STORYLINE" };
+        String[] icons = {
+                "ui/options/leaderboardicon.png",
+                "ui/options/volumeicon.png",
+                "ui/options/keyswapicon.png",
+                "ui/options/storylineicon.png"
+        };
+
+        // Loop to create each row
+        for (int i = 0; i < texts.length; i++) {
+            final int idx = i;
+
+            // 1) Row container
+            Table row = new Table();
+            row.setBackground((Drawable) null); // transparent background
+
+            // 2) Bullet Label
+            Label.LabelStyle ls = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
+            Label bullet = new Label("• " + texts[i], ls);
+
+            // 3) Icon Image
+            Texture tex = new Texture(Gdx.files.internal(icons[i]));
+            Image icon = new Image(tex);
+            icon.setSize(12,16);
+
+            // 4) Assemble row
+            row.add(bullet).padRight(8);
+            row.add(icon).size(14,16);
+            row.pack();
+
+            // 5) Add click listener to row
+            row.addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent e, float x, float y) {
+                    switch (idx) {
+                        //case 0: showLeaderboard();  break;
+                        //case 1: toggleVolume();     break;
+                        //case 2: swapKeys();         break;
+                        //case 3: showStoryline();    break;
+                        case 0: System.out.println("Clicked");  break;
+
+                    }
+                }
+            });
+
+            // 6) Add row to parent table
+            optionsTable.add(row).left().padBottom(6).row();
+        }
+
     }
 
     @Override
