@@ -1,5 +1,6 @@
 package com.candalf.lostbeneath;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -14,7 +15,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class FirstScreen implements Screen {
 
-    private Main game;
+    private Game game;
     private OrthographicCamera camera;
     private ShapeRenderer shapeRenderer;
     private SpriteBatch batch;
@@ -28,7 +29,7 @@ public class FirstScreen implements Screen {
     private final float heartGap      = 8f;
     private final float margin        = 10f;
 
-    public FirstScreen(Main game) {
+    public FirstScreen(Game game) {
         this.game = game;
         player1 = new Player(100, 100, Color.RED,   5, 200f);
         player2 = new Player(300, 100, Color.BLUE,  5, 200f);

@@ -8,6 +8,7 @@ ui/buttons/startup.png
 ui/mmbackground.png
 ui/options/keyswapicon.png
 ui/options/leaderboardicon.png
+ui/options/soundofficon.png
 ui/options/storylineicon.png
 ui/options/volumeicon.png
 ui/uiskin.json

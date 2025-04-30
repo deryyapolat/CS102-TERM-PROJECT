@@ -20,19 +20,27 @@ public class MenuScreen extends AbstractScreen
     private ImageButton optionsButton;
     private ImageButton creditsButton;
     private Window optionsWindow;
-    private boolean isOptionsOn = false;
+    private boolean isSoundOn = false;
     private BitmapFont font;
     private Group optionsOverlay;
     private Table optionsTable;
+    private Group creditsOverlay;
+    private Table creditsTable;
+    private String[] optionsIcons;
+    private String volumeIcon;
+    private Image volumeIconImage;
 
     public MenuScreen(Main game)
     {
         super(game);
+
     }
 
     @Override
     protected void initialize()
     {
+        volumeIcon = "ui/options/volumeicon.png";
+        optionsIcons = new String[4];
         backgroundTexture = new Texture(Gdx.files.internal("ui/mmbackground.png"));
 
 
@@ -114,7 +122,7 @@ public class MenuScreen extends AbstractScreen
         startButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                //game.setScreen(new LevelScreen((Game) game));  // your first level screen
+                game.setScreen(new FirstScreen(game));  // your first level screen
             }
         });
 
@@ -129,10 +137,13 @@ public class MenuScreen extends AbstractScreen
             }
         });
 
+        creditsOverlay = new Group();
+        creditsOverlay.setVisible(false);       // start hidden
+        stage.addActor(creditsOverlay);
         creditsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                //game.setScreen(new CreditsScreen((Game) game));
+                creditsOverlay.setVisible(!creditsOverlay.isVisible());
             }
         });
 
@@ -145,15 +156,15 @@ public class MenuScreen extends AbstractScreen
 
         // Option texts + icon paths + click actions
         String[] texts = { "LEADERBOARD", "VOLUME", "KEY SWAP", "STORYLINE" };
-        String[] icons = {
-                "ui/options/leaderboardicon.png",
-                "ui/options/volumeicon.png",
-                "ui/options/keyswapicon.png",
-                "ui/options/storylineicon.png"
-        };
+        optionsIcons[0] = "ui/options/leaderboardicon.png";
+        optionsIcons[1] = volumeIcon;
+        optionsIcons[2] = "ui/options/keyswapicon.png";
+        optionsIcons[3] = "ui/options/storylineicon.png";
+
 
         // Loop to create each row
-        for (int i = 0; i < texts.length; i++) {
+        for (int i = 0; i < texts.length; i++)
+        {
             final int idx = i;
 
             // 1) Row container
@@ -165,9 +176,13 @@ public class MenuScreen extends AbstractScreen
             Label bullet = new Label("• " + texts[i], ls);
 
             // 3) Icon Image
-            Texture tex = new Texture(Gdx.files.internal(icons[i]));
+            Texture tex = new Texture(Gdx.files.internal(optionsIcons[i]));
             Image icon = new Image(tex);
             icon.setSize(12,16);
+
+            if (idx == 1) {
+                volumeIconImage = icon;
+            }
 
             // 4) Assemble row
             row.add(bullet).padRight(8);
@@ -180,7 +195,7 @@ public class MenuScreen extends AbstractScreen
                 public void clicked(InputEvent e, float x, float y) {
                     switch (idx) {
                         //case 0: showLeaderboard();  break;
-                        //case 1: toggleVolume();     break;
+                        case 1: toggleVolume();     break;
                         //case 2: swapKeys();         break;
                         //case 3: showStoryline();    break;
                         case 0: System.out.println("Clicked");  break;
@@ -192,6 +207,37 @@ public class MenuScreen extends AbstractScreen
             // 6) Add row to parent table
             optionsTable.add(row).left().padBottom(6).row();
         }
+            //Credits table
+
+            creditsTable = new Table();
+            creditsTable.setPosition(
+                    creditsButton.getX() + 100,
+                    creditsButton.getY() + 40 + creditsButton.getHeight() + 30
+            );
+            creditsOverlay.addActor(creditsTable);
+
+            String[] creditsTexts = { "  GAME CREDITS:", "ARAS SOYLU", "ARDA AKIN", "DERYA POLAT", "MEHMET CAN BASTEM", "SINEM YILDIRIM" };
+
+            for (int j = 0; j < creditsTexts.length; j++) {
+                // 1) Row container
+                Table creditsrow = new Table();
+                creditsrow.setBackground((Drawable) null); // transparent background
+
+                // 2) Bullet Label
+                Label.LabelStyle las = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
+                Label cbullet;
+                if (j != 0) {
+                     cbullet = new Label("• " + creditsTexts[j], las);
+                }
+                else
+                {
+                     cbullet = new Label(creditsTexts[j], las);
+                }
+                creditsrow.add(cbullet).padRight(8);
+                creditsrow.pack();
+                creditsTable.add(creditsrow).left().padBottom(6).row();
+            }
+
 
     }
 
@@ -205,5 +251,23 @@ public class MenuScreen extends AbstractScreen
     public void dispose() {
         super.dispose();
         backgroundTexture.dispose();
+    }
+
+    private void toggleVolume()
+    {
+        if(isSoundOn)
+        {
+            volumeIcon = "ui/options/soundofficon.png";
+            isSoundOn = false;
+        }
+        else
+        {
+            volumeIcon = "ui/options/volumeicon.png";
+            isSoundOn = true;
+        }
+        if (volumeIconImage != null) {
+            Texture newTex = new Texture(Gdx.files.internal(volumeIcon));
+            volumeIconImage.setDrawable(new TextureRegionDrawable(new TextureRegion(newTex)));
+        }
     }
 }
