@@ -29,6 +29,8 @@ public class MenuScreen extends AbstractScreen
     private String[] optionsIcons;
     private String volumeIcon;
     private Image volumeIconImage;
+    private Group leaderboardOverlay;
+    private Label.LabelStyle labelStyle;
 
     public MenuScreen(Main game)
     {
@@ -39,6 +41,8 @@ public class MenuScreen extends AbstractScreen
     @Override
     protected void initialize()
     {
+        font = new BitmapFont();
+        labelStyle = new Label.LabelStyle(font, Color.WHITE);
         volumeIcon = "ui/options/volumeicon.png";
         optionsIcons = new String[4];
         backgroundTexture = new Texture(Gdx.files.internal("ui/mmbackground.png"));
@@ -172,8 +176,8 @@ public class MenuScreen extends AbstractScreen
             row.setBackground((Drawable) null); // transparent background
 
             // 2) Bullet Label
-            Label.LabelStyle ls = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
-            Label bullet = new Label("• " + texts[i], ls);
+
+            Label bullet = new Label("• " + texts[i], labelStyle);
 
             // 3) Icon Image
             Texture tex = new Texture(Gdx.files.internal(optionsIcons[i]));
@@ -194,12 +198,10 @@ public class MenuScreen extends AbstractScreen
                 @Override
                 public void clicked(InputEvent e, float x, float y) {
                     switch (idx) {
-                        //case 0: showLeaderboard();  break;
+                        case 0: leaderboardWindow(); showLeaderboard();  break;
                         case 1: toggleVolume();     break;
-                        //case 2: swapKeys();         break;
+                        //case 2: swapKeysWindow();         break;
                         //case 3: showStoryline();    break;
-                        case 0: System.out.println("Clicked");  break;
-
                     }
                 }
             });
@@ -224,14 +226,13 @@ public class MenuScreen extends AbstractScreen
                 creditsrow.setBackground((Drawable) null); // transparent background
 
                 // 2) Bullet Label
-                Label.LabelStyle las = new Label.LabelStyle(new BitmapFont(), Color.WHITE);
                 Label cbullet;
                 if (j != 0) {
-                     cbullet = new Label("• " + creditsTexts[j], las);
+                     cbullet = new Label("• " + creditsTexts[j], labelStyle);
                 }
                 else
                 {
-                     cbullet = new Label(creditsTexts[j], las);
+                     cbullet = new Label(creditsTexts[j], labelStyle);
                 }
                 creditsrow.add(cbullet).padRight(8);
                 creditsrow.pack();
@@ -270,4 +271,71 @@ public class MenuScreen extends AbstractScreen
             volumeIconImage.setDrawable(new TextureRegionDrawable(new TextureRegion(newTex)));
         }
     }
+    private void leaderboardWindow()
+    {
+        if (leaderboardOverlay != null) return;
+
+        leaderboardOverlay = new Group();
+        stage.addActor(leaderboardOverlay);
+
+        BitmapFont largeFont = new BitmapFont(); // or use a pre-scaled .fnt file
+        largeFont.getData().setScale(2f); // make it bigger
+        Label.LabelStyle largeTitleStyle = new Label.LabelStyle(largeFont, Color.WHITE);
+        Label title = new Label("LEADERBOARD", largeTitleStyle);
+        title.setPosition((950 - title.getWidth()) / 2f, 350); // adjust Y as needed
+
+
+        Table table = new Table();
+        table.setBackground(new TextureRegionDrawable(
+                new TextureRegion(new Texture(Gdx.files.internal("ui/lbbackground.png"))))
+         );
+        table.setColor(1, 1, 1, 1); // 75% opacity
+        table.center();
+
+        // 3) Position the table in the center of the screen
+        table.setSize(400, 300);
+        table.setPosition(
+                (950  - table.getWidth())  / 2,
+                (512 - table.getHeight()) / 2
+        );
+
+
+        // 5) Fetch your stored records (stubbed here)
+        String[] records = {
+                "Alice    120 sec",
+                "Bob      145 sec",
+                "Cara     165 sec",
+                "Dave     200 sec"
+        };
+
+        // 6) One row per record
+        for (String rec : records) {
+            Label rowLabel = new Label(rec, labelStyle);
+            table.add(rowLabel).left().pad(5).row();
+        }
+
+        TextButton.TextButtonStyle buttonStyle = new TextButton.TextButtonStyle();
+        buttonStyle.font = font;
+        buttonStyle.fontColor = Color.RED;
+
+        TextButton closeButton = new TextButton("EXIT", buttonStyle);
+        closeButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                leaderboardOverlay.setVisible(false); // Only this toggles visibility now
+            }
+        });
+        table.add(closeButton).padTop(20).row();
+
+        // 7) Add the table to our overlay group
+        leaderboardOverlay.addActor(table);
+        leaderboardOverlay.addActor(title);
+        leaderboardOverlay.setVisible(false);
+    }
+
+    private void showLeaderboard() {
+        // Toggle its visibility when called
+        leaderboardOverlay.setVisible(!leaderboardOverlay.isVisible());
+    }
 }
+

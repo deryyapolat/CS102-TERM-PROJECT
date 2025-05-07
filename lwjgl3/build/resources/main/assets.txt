@@ -5,6 +5,7 @@ ui/buttons/optionsdown.png
 ui/buttons/optionsup.png
 ui/buttons/startdown.png
 ui/buttons/startup.png
+ui/lbbackground.png
 ui/mmbackground.png
 ui/options/keyswapicon.png
 ui/options/leaderboardicon.png
