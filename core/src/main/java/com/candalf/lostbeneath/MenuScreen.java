@@ -126,7 +126,7 @@ public class MenuScreen extends AbstractScreen
         startButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new FirstScreen(game));  // your first level screen
+                game.setScreen(new GamePanel(game));  // your first level screen
             }
         });
 

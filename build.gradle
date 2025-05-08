@@ -9,8 +9,6 @@ buildscript {
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
   }
   dependencies {
-
-
   }
 }
 
@@ -55,20 +53,36 @@ configure(subprojects) {
   compileJava {
     options.incremental = true
   }
-}
 
-subprojects {
-  version = "$projectVersion"
-  ext.appName = 'lostbeneath'
   repositories {
-    mavenCentral()
-    maven { url 'https://s01.oss.sonatype.org' }
-    // You may want to remove the following line if you have errors downloading dependencies.
     mavenLocal()
+    mavenCentral()
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
     maven { url 'https://jitpack.io' }
   }
 }
 
+subprojects {
+  version = "$projectVersion"
+  ext.appName = 'lostbeneath'
+}
+
+project(":core") {
+  dependencies {
+    api "com.badlogicgames.gdx:gdx:1.11.0"
+    api "com.badlogicgames.gdx:gdx-box2d:1.11.0"
+  }
+}
+
+project(":lwjgl3") {
+  dependencies {
+    implementation project(":core")
+    api "com.badlogicgames.gdx:gdx-backend-lwjgl3:1.11.0"
+    api "com.badlogicgames.gdx:gdx-platform:1.11.0:natives-desktop"
+    api "com.badlogicgames.gdx:gdx-box2d-platform:1.11.0:natives-desktop"
+  }
+}
+
 eclipse.project.name = 'lostbeneath' + '-parent'
+

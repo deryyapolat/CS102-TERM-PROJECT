@@ -1,0 +1,34 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "newtiles.tsx": {
+            "dynamicWrapping": true
+        },
+        "tiles.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.0458,
+            "scaleInEditor": 0.15
+        }
+    },
+    "frame.defaultDuration": 200,
+    "last.imagePath": "/Users/candalf/Desktop/harita/craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Items",
+    "map.height": 16,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "openFiles": [
+    ],
+    "project": "unbenannt.tiled-project",
+    "property.type": "float",
+    "recentFiles": [
+        "tiles.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.type": 1
+}

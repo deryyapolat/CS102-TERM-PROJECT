@@ -1,0 +1,117 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "unbenannt.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "/Users/candalf/Desktop/craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/tiles/tile15.tsx": {
+            "scaleInDock": 0.6654,
+            "scaleInEditor": 0.4
+        },
+        "Key.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "background.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.55,
+            "scaleInEditor": 0.4
+        },
+        "bisiler.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.55,
+            "scaleInEditor": 0.4
+        },
+        "düzenlenenItemler.tsx": {
+            "scaleInDock": 0.2238,
+            "scaleInEditor": 0.4
+        },
+        "ice.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.55,
+            "scaleInEditor": 0.4
+        },
+        "items.tsx": {
+            "scaleInDock": 0.55,
+            "scaleInEditor": 0.4
+        },
+        "key.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 2.04
+        },
+        "objects.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.55,
+            "scaleInEditor": 0.4
+        },
+        "portal.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.1909,
+            "scaleInEditor": 0.4
+        },
+        "posinous.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.0373,
+            "scaleInEditor": 0.4
+        },
+        "unbenannt.tmx": {
+            "scale": 0.83,
+            "selectedLayer": 21,
+            "viewCenter": {
+                "x": 1027.1084337349398,
+                "y": 399.39759036144585
+            }
+        },
+        "water.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.2039,
+            "scaleInEditor": 0.4
+        }
+    },
+    "frame.defaultDuration": 100,
+    "last.imagePath": "/Users/candalf/Desktop/düzenlenen itemler",
+    "map.height": 16,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "openFiles": [
+        "unbenannt.tmx",
+        "background.tsx",
+        "objects.tsx",
+        "bisiler.tsx",
+        "water.tsx",
+        "posinous.tsx",
+        "ice.tsx",
+        "portal.tsx",
+        "items.tsx",
+        "/Users/candalf/Desktop/craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/tiles/tile15.tsx",
+        "düzenlenenItemler.tsx"
+    ],
+    "project": "unbenannt.tiled-project",
+    "property.type": "float",
+    "recentFiles": [
+        "düzenlenenItemler.tsx",
+        "/Users/candalf/Desktop/craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/tiles/tile15.tsx",
+        "items.tsx",
+        "portal.tsx",
+        "ice.tsx",
+        "posinous.tsx",
+        "water.tsx",
+        "bisiler.tsx",
+        "objects.tsx",
+        "background.tsx",
+        "unbenannt.tmx",
+        "key.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    },
+    "tileset.type": 1
+}
