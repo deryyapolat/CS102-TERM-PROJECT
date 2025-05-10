@@ -15,9 +15,14 @@ import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -43,6 +48,14 @@ public class GamePanel implements Screen {
     private InputMultiplexer inputMultiplexer;
     private Animation<TextureRegion> knightAnimation;
     private Animation<TextureRegion> mageAnimation;
+    
+    // Game over functionality
+    private boolean gameOver = false;
+    private float gameOverTimer = 0;
+    private static final float RESTART_DELAY = 3.0f; // 3 seconds before restart
+    private BitmapFont gameOverFont;
+    private GlyphLayout gameOverLayout;
+    private ShapeRenderer shapeRenderer;
 
     public GamePanel(Game game) {
         this.game = game;
@@ -95,6 +108,12 @@ public class GamePanel implements Screen {
         // Center camera initially
         camera.position.set(WORLD_WIDTH / 2, WORLD_HEIGHT / 2, 0);
         camera.update();
+        
+        // Initialize game over resources
+        gameOverFont = new BitmapFont();
+        gameOverFont.getData().setScale(4.0f); // Make the font larger
+        gameOverLayout = new GlyphLayout();
+        shapeRenderer = new ShapeRenderer();
         
         // Load animations
         initializeAnimations();
@@ -193,16 +212,19 @@ public class GamePanel implements Screen {
         }
         
         // Knight animation priorities (improved to handle mid-air movement better)
-        if (playerA.isJumping()) {
-            if (playerA.getBody().getLinearVelocity().y > 0) {
-                playerA.setAnimationState(PlayerAnimation.PlayerState.JUMPING);
+        // Only update animation state if the player isn't dying
+        if (playerA.getHealth() > 0) {
+            if (playerA.isJumping()) {
+                if (playerA.getBody().getLinearVelocity().y > 0) {
+                    playerA.setAnimationState(PlayerAnimation.PlayerState.JUMPING);
+                } else {
+                    playerA.setAnimationState(PlayerAnimation.PlayerState.FALLING);
+                }
+            } else if (knightMoved) {
+                playerA.setAnimationState(PlayerAnimation.PlayerState.WALKING);
             } else {
-                playerA.setAnimationState(PlayerAnimation.PlayerState.FALLING);
+                playerA.setAnimationState(PlayerAnimation.PlayerState.IDLE);
             }
-        } else if (knightMoved) {
-            playerA.setAnimationState(PlayerAnimation.PlayerState.WALKING);
-        } else {
-            playerA.setAnimationState(PlayerAnimation.PlayerState.IDLE);
         }
         
         // Apply the same physics approach for Player B (Mage)
@@ -271,16 +293,19 @@ public class GamePanel implements Screen {
         }
         
         // Mage animation priorities (enhanced to handle mid-air movement better)
-        if (playerB.isJumping()) {
-            if (playerB.getBody().getLinearVelocity().y > 0) {
-                playerB.setAnimationState(PlayerAnimation.PlayerState.JUMPING);
+        // Only update animation state if the player isn't dying
+        if (playerB.getHealth() > 0) {
+            if (playerB.isJumping()) {
+                if (playerB.getBody().getLinearVelocity().y > 0) {
+                    playerB.setAnimationState(PlayerAnimation.PlayerState.JUMPING);
+                } else {
+                    playerB.setAnimationState(PlayerAnimation.PlayerState.FALLING);
+                }
+            } else if (mageMoved) {
+                playerB.setAnimationState(PlayerAnimation.PlayerState.WALKING);
             } else {
-                playerB.setAnimationState(PlayerAnimation.PlayerState.FALLING);
+                playerB.setAnimationState(PlayerAnimation.PlayerState.IDLE);
             }
-        } else if (mageMoved) {
-            playerB.setAnimationState(PlayerAnimation.PlayerState.WALKING);
-        } else {
-            playerB.setAnimationState(PlayerAnimation.PlayerState.IDLE);
         }
         
         // Update game logic (only once per frame)
@@ -310,6 +335,61 @@ public class GamePanel implements Screen {
         // Update and render HUD
         hud.update();
         hud.render();
+        
+        // Check if either player has died
+        if ((playerA.getHealth() <= 0 || playerB.getHealth() <= 0) && !gameOver) {
+            gameOver = true;
+            gameOverTimer = 0;
+        }
+        
+        // Handle game over state
+        if (gameOver) {
+            // Increment the timer
+            gameOverTimer += delta;
+            
+            // Show "You have failed!" message with screen-space coordinates for the camera view
+            
+            // Create a semi-transparent black background for the message
+            Gdx.gl.glEnable(GL20.GL_BLEND);
+            Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+            shapeRenderer.setProjectionMatrix(batch.getProjectionMatrix());
+            
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            shapeRenderer.setColor(0, 0, 0, 0.7f); // Semi-transparent black
+            shapeRenderer.rect(camera.position.x - viewport.getWorldWidth()/2, 
+                              camera.position.y - 50, 
+                              viewport.getWorldWidth(), 
+                              100);
+            shapeRenderer.end();
+            
+            // Draw the text
+            batch.begin();
+            gameOverLayout.setText(gameOverFont, "You have failed!");
+            float messageX = camera.position.x - gameOverLayout.width / 2;
+            float messageY = camera.position.y + gameOverLayout.height / 2; // Center vertically
+            
+            // Add pulsing effect to the text
+            float pulse = 0.7f + 0.3f * (float)Math.sin(gameOverTimer * 5);
+            gameOverFont.setColor(1, pulse * 0.3f, pulse * 0.3f, 1); // Pulsing red color
+            gameOverFont.draw(batch, "You have failed!", messageX, messageY);
+            
+            // Add "Restarting..." text if timer is over halfway
+            if (gameOverTimer > RESTART_DELAY / 2) {
+                gameOverLayout.setText(gameOverFont, "Restarting...");
+                gameOverFont.setColor(1, 1, 1, 0.5f + 0.5f * (gameOverTimer - RESTART_DELAY/2) / (RESTART_DELAY/2));
+                gameOverFont.draw(batch, "Restarting...", 
+                                 camera.position.x - gameOverLayout.width / 2, 
+                                 messageY - gameOverLayout.height * 1.5f);
+            }
+            
+            batch.end();
+            
+            // Restart the game after delay
+            if (gameOverTimer > RESTART_DELAY) {
+                // Reset the game by creating a new GamePanel
+                game.setScreen(new GamePanel(game));
+            }
+        }
     }
 
     @Override
@@ -345,5 +425,7 @@ public class GamePanel implements Screen {
         playerA.dispose();
         playerB.dispose();
         hud.dispose();
+        gameOverFont.dispose();
+        shapeRenderer.dispose();
     }
 }

@@ -551,7 +551,10 @@ düzenlenen itemler/ropeSağ.PNG
 düzenlenen itemler/ropeSol.PNG
 düzenlenen itemler/sagdanbuz.PNG
 düzenlenen itemler/soldanbuz.PNG
+harita/ACID_SETUP_GUIDE.txt
 harita/acid-tiles.tsx
+harita/background.tsx
+harita/barrier.tsx
 harita/craftpix-671190-dungeon-platformer-pixel-art-tileset/License.txt
 harita/craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Background/Bright/Background.png
 harita/craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Background/Bright/back_ruin_spots.png
@@ -874,6 +877,7 @@ harita/craftpix-671190-dungeon-platformer-pixel-art-tileset/PSD/items.psd
 harita/craftpix-671190-dungeon-platformer-pixel-art-tileset/PSD/tiles1.psd
 harita/craftpix-671190-dungeon-platformer-pixel-art-tileset/PSD/tiles2_dark.psd
 harita/craftpix-671190-dungeon-platformer-pixel-art-tileset/readme.txt
+harita/detailedObjects.tsx
 harita/düzenlenen itemler/1.PNG
 harita/düzenlenen itemler/2.PNG
 harita/düzenlenen itemler/3.PNG
@@ -893,6 +897,11 @@ harita/düzenlenen itemler/ropeSağ.PNG
 harita/düzenlenen itemler/ropeSol.PNG
 harita/düzenlenen itemler/sagdanbuz.PNG
 harita/düzenlenen itemler/soldanbuz.PNG
+harita/episode1.tmx
+harita/episode2.tmx
+harita/episode3.tmx
+harita/episode4.tmx
+harita/extraObjects.tsx
 harita/icetiled.tsx
 harita/icetiled/IMG-20250430-WA0020.png
 harita/icetiled/IMG-20250430-WA0021.png
@@ -907,6 +916,7 @@ harita/ilev 2/torch2_4.png
 harita/items.tsx
 harita/newagain.tsx
 harita/newtiles.tsx
+harita/poisonousWater.tsx
 harita/tiles.tsx
 harita/tiles/background/Bright/Background.png
 harita/tiles/background/Bright/back_ruin_spots.png
@@ -1171,20 +1181,6 @@ harita/tiles/items/star6.png
 harita/tiles/items/star7.png
 harita/tiles/items/star8.png
 harita/tiles/items/star9.png
-harita/tiles/poisonousWater/asid_tile1.png
-harita/tiles/poisonousWater/asid_tile10.png
-harita/tiles/poisonousWater/asid_tile2.png
-harita/tiles/poisonousWater/asid_tile3.png
-harita/tiles/poisonousWater/asid_tile4.png
-harita/tiles/poisonousWater/asid_tile5.png
-harita/tiles/poisonousWater/asid_tile6.png
-harita/tiles/poisonousWater/asid_tile7.png
-harita/tiles/poisonousWater/asid_tile8.png
-harita/tiles/poisonousWater/asid_tile9.png
-harita/tiles/poisonousWater/pit1.png
-harita/tiles/poisonousWater/pit2.png
-harita/tiles/poisonousWater/pit3.png
-harita/tiles/poisonousWater/small_pit.png
 harita/tiles/walls/tile1.png
 harita/tiles/walls/tile10.png
 harita/tiles/walls/tile11.png
@@ -1222,6 +1218,9 @@ harita/tiles/walls/tile9.png
 harita/unbenannt.tiled-project
 harita/unbenannt.tiled-session
 harita/unbenannt.tmx
+harita/unbenannt.tmx.bak
+harita/untitled.tiled-session
+harita/walls.tsx
 mapler.zip
 mapler/Key.tsx
 mapler/background.tsx

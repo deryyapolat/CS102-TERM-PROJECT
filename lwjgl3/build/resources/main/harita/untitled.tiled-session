@@ -1,0 +1,147 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "episode1.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "background.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.1172,
+            "scaleInEditor": 0.08
+        },
+        "barrier.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 0.08
+        },
+        "detailedObjects.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.2278,
+            "scaleInEditor": 0.08
+        },
+        "episode1.tmx": {
+            "expandedObjectLayers": [
+                21,
+                20,
+                23,
+                17,
+                15,
+                13,
+                19,
+                22,
+                18
+            ],
+            "scale": 0.3484,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": -54.53501722158438,
+                "y": 671.6417910447761
+            }
+        },
+        "episode2.tmx": {
+            "expandedObjectLayers": [
+                29,
+                32,
+                23,
+                28
+            ],
+            "scale": 0.39,
+            "selectedLayer": 21,
+            "viewCenter": {
+                "x": 992.3076923076924,
+                "y": 857.6923076923076
+            }
+        },
+        "episode3.tmx": {
+            "expandedObjectLayers": [
+                29,
+                31,
+                25,
+                20,
+                32,
+                30,
+                27,
+                26,
+                19,
+                22,
+                33,
+                34,
+                28,
+                18
+            ],
+            "scale": 0.3462,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 1010.9763142692085,
+                "y": 677.3541305603696
+            }
+        },
+        "episode4.tmx": {
+            "expandedObjectLayers": [
+                14,
+                17,
+                15,
+                12,
+                13,
+                19,
+                11,
+                16
+            ],
+            "scale": 0.719,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1356.0500695410292,
+                "y": 705.8414464534077
+            }
+        },
+        "extraObjects.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 0.0554,
+            "scaleInEditor": 0.08
+        },
+        "items.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 0.08
+        },
+        "poisonousWater.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 0.08
+        },
+        "walls.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1.1605,
+            "scaleInEditor": 0.08
+        }
+    },
+    "map.height": 16,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "openFiles": [
+        "episode2.tmx",
+        "episode3.tmx",
+        "episode4.tmx",
+        "episode1.tmx"
+    ],
+    "project": "",
+    "property.type": "int",
+    "recentFiles": [
+        "episode2.tmx",
+        "episode3.tmx",
+        "episode4.tmx",
+        "episode1.tmx",
+        "walls.tsx",
+        "poisonousWater.tsx",
+        "items.tsx",
+        "detailedObjects.tsx",
+        "background.tsx",
+        "barrier.tsx",
+        "extraObjects.tsx"
+    ]
+}

@@ -1,11 +1,533 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="16" tilewidth="64" tileheight="64" infinite="0" nextlayerid="18" nextobjectid="27">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="16" tilewidth="64" tileheight="64" infinite="0" nextlayerid="29" nextobjectid="55">
  <tileset firstgid="1" source="tiles.tsx"/>
  <tileset firstgid="8" source="newtiles.tsx"/>
  <tileset firstgid="42" source="icetiled.tsx"/>
- <tileset firstgid="61" source="newagain.tsx"/>
+ <tileset firstgid="61" name="newagain" tilewidth="256" tileheight="256" tilecount="151" columns="0">
+  <grid orientation="orthogonal" width="1" height="1"/>
+  <tile id="0">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/big_column_dark1.png" width="64" height="64"/>
+  </tile>
+  <tile id="1">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/big_column_dark2.png" width="64" height="64"/>
+  </tile>
+  <tile id="2">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/big_column_dark3.png" width="64" height="64"/>
+  </tile>
+  <tile id="3">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/big_column1.png" width="64" height="64"/>
+  </tile>
+  <tile id="4">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/big_column2.png" width="64" height="64"/>
+  </tile>
+  <tile id="5">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/big_column3.png" width="64" height="64"/>
+  </tile>
+  <tile id="6">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/blade1.png" width="128" height="128"/>
+  </tile>
+  <tile id="7">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/blade2.png" width="128" height="128"/>
+  </tile>
+  <tile id="8">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/blade3.png" width="128" height="128"/>
+  </tile>
+  <tile id="9">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/bones.png" width="64" height="64"/>
+  </tile>
+  <tile id="10">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/bridge1.png" width="32" height="32"/>
+  </tile>
+  <tile id="11">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/bridge2.png" width="32" height="32"/>
+  </tile>
+  <tile id="12">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/bridge3.png" width="32" height="32"/>
+  </tile>
+  <tile id="13">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/candle.png" width="128" height="128"/>
+  </tile>
+  <tile id="14">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/chain1.png" width="128" height="128"/>
+  </tile>
+  <tile id="15">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/chain2.png" width="256" height="256"/>
+  </tile>
+  <tile id="16">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/chain3.png" width="256" height="256"/>
+  </tile>
+  <tile id="17">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/dart_place.png" width="64" height="64"/>
+  </tile>
+  <tile id="18">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/dart.png" width="64" height="64"/>
+  </tile>
+  <tile id="19">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/door1.png" width="256" height="256"/>
+  </tile>
+  <tile id="20">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/door2.png" width="256" height="256"/>
+   <animation>
+    <frame tileid="20" duration="300"/>
+    <frame tileid="21" duration="300"/>
+    <frame tileid="22" duration="300"/>
+    <frame tileid="23" duration="300"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+    <frame tileid="23" duration="10000"/>
+   </animation>
+  </tile>
+  <tile id="21">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/door3.png" width="256" height="256"/>
+  </tile>
+  <tile id="22">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/door4.png" width="256" height="256"/>
+  </tile>
+  <tile id="23">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/door5.png" width="256" height="256"/>
+  </tile>
+  <tile id="24">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/grass1.png" width="16" height="16"/>
+  </tile>
+  <tile id="25">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/grass2.png" width="32" height="32"/>
+  </tile>
+  <tile id="26">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/grass3.png" width="32" height="32"/>
+  </tile>
+  <tile id="27">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/grass4.png" width="32" height="32"/>
+  </tile>
+  <tile id="28">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant1.png" width="256" height="256"/>
+   <animation>
+    <frame tileid="28" duration="300"/>
+    <frame tileid="29" duration="300"/>
+    <frame tileid="30" duration="300"/>
+    <frame tileid="31" duration="300"/>
+    <frame tileid="32" duration="300"/>
+    <frame tileid="33" duration="300"/>
+    <frame tileid="34" duration="300"/>
+    <frame tileid="35" duration="300"/>
+   </animation>
+  </tile>
+  <tile id="29">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant2.png" width="256" height="256"/>
+  </tile>
+  <tile id="30">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant3.png" width="256" height="256"/>
+  </tile>
+  <tile id="31">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant4.png" width="256" height="256"/>
+  </tile>
+  <tile id="32">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant5.png" width="256" height="256"/>
+  </tile>
+  <tile id="33">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant6.png" width="256" height="256"/>
+  </tile>
+  <tile id="34">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant7.png" width="256" height="256"/>
+  </tile>
+  <tile id="35">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant8.png" width="256" height="256"/>
+  </tile>
+  <tile id="36">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/plant9.png" width="256" height="256"/>
+  </tile>
+  <tile id="37">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green1.png" width="16" height="16"/>
+  </tile>
+  <tile id="38">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green2.png" width="16" height="16"/>
+  </tile>
+  <tile id="39">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green3.png" width="16" height="16"/>
+  </tile>
+  <tile id="40">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green4.png" width="16" height="16"/>
+  </tile>
+  <tile id="41">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green5.png" width="16" height="16"/>
+  </tile>
+  <tile id="42">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green6.png" width="16" height="16"/>
+  </tile>
+  <tile id="43">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green7.png" width="16" height="16"/>
+  </tile>
+  <tile id="44">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green8.png" width="16" height="16"/>
+  </tile>
+  <tile id="45">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green9.png" width="8" height="8"/>
+  </tile>
+  <tile id="46">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green10.png" width="8" height="8"/>
+  </tile>
+  <tile id="47">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green11.png" width="8" height="8"/>
+  </tile>
+  <tile id="48">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green12.png" width="4" height="9"/>
+  </tile>
+  <tile id="49">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green13.png" width="8" height="8"/>
+  </tile>
+  <tile id="50">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green14.png" width="8" height="8"/>
+  </tile>
+  <tile id="51">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green15.png" width="8" height="8"/>
+  </tile>
+  <tile id="52">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green16.png" width="8" height="8"/>
+  </tile>
+  <tile id="53">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green17.png" width="32" height="32"/>
+  </tile>
+  <tile id="54">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green18.png" width="7" height="20"/>
+  </tile>
+  <tile id="55">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green19.png" width="32" height="32"/>
+  </tile>
+  <tile id="56">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green20.png" width="32" height="32"/>
+  </tile>
+  <tile id="57">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green21.png" width="32" height="32"/>
+  </tile>
+  <tile id="58">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green22.png" width="32" height="32"/>
+  </tile>
+  <tile id="59">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green23.png" width="32" height="32"/>
+  </tile>
+  <tile id="60">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue-green24.png" width="32" height="32"/>
+  </tile>
+  <tile id="61">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue1.png" width="16" height="16"/>
+  </tile>
+  <tile id="62">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue2.png" width="16" height="16"/>
+  </tile>
+  <tile id="63">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue3.png" width="16" height="16"/>
+  </tile>
+  <tile id="64">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue4.png" width="16" height="16"/>
+  </tile>
+  <tile id="65">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue5.png" width="16" height="16"/>
+  </tile>
+  <tile id="66">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue6.png" width="16" height="16"/>
+  </tile>
+  <tile id="67">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue7.png" width="16" height="16"/>
+  </tile>
+  <tile id="68">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue8.png" width="16" height="16"/>
+  </tile>
+  <tile id="69">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue9.png" width="8" height="8"/>
+  </tile>
+  <tile id="70">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue10.png" width="8" height="8"/>
+  </tile>
+  <tile id="71">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue11.png" width="8" height="8"/>
+  </tile>
+  <tile id="72">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue12.png" width="8" height="8"/>
+  </tile>
+  <tile id="73">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue13.png" width="16" height="16"/>
+  </tile>
+  <tile id="74">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue14.png" width="8" height="8"/>
+  </tile>
+  <tile id="75">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue15.png" width="8" height="8"/>
+  </tile>
+  <tile id="76">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue16.png" width="8" height="8"/>
+  </tile>
+  <tile id="77">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue17.png" width="32" height="32"/>
+  </tile>
+  <tile id="78">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue18.png" width="32" height="32"/>
+  </tile>
+  <tile id="79">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue19.png" width="32" height="32"/>
+  </tile>
+  <tile id="80">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue20.png" width="32" height="32"/>
+  </tile>
+  <tile id="81">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue21.png" width="32" height="32"/>
+  </tile>
+  <tile id="82">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue22.png" width="32" height="32"/>
+  </tile>
+  <tile id="83">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue23.png" width="32" height="32"/>
+  </tile>
+  <tile id="84">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_blue24.png" width="32" height="32"/>
+  </tile>
+  <tile id="85">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden1.png" width="16" height="16"/>
+  </tile>
+  <tile id="86">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden2.png" width="16" height="16"/>
+  </tile>
+  <tile id="87">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden3.png" width="16" height="16"/>
+  </tile>
+  <tile id="88">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden4.png" width="16" height="16"/>
+  </tile>
+  <tile id="89">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden5.png" width="16" height="16"/>
+  </tile>
+  <tile id="90">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden6.png" width="16" height="16"/>
+  </tile>
+  <tile id="91">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden7.png" width="16" height="16"/>
+  </tile>
+  <tile id="92">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden8.png" width="16" height="16"/>
+  </tile>
+  <tile id="93">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden9.png" width="8" height="8"/>
+  </tile>
+  <tile id="94">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden10.png" width="8" height="8"/>
+  </tile>
+  <tile id="95">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden11.png" width="8" height="8"/>
+  </tile>
+  <tile id="96">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden12.png" width="8" height="8"/>
+  </tile>
+  <tile id="97">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden13.png" width="16" height="16"/>
+  </tile>
+  <tile id="98">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden14.png" width="8" height="8"/>
+  </tile>
+  <tile id="99">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden15.png" width="8" height="8"/>
+  </tile>
+  <tile id="100">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden16.png" width="8" height="8"/>
+  </tile>
+  <tile id="101">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden17.png" width="32" height="32"/>
+  </tile>
+  <tile id="102">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden18.png" width="32" height="32"/>
+  </tile>
+  <tile id="103">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden19.png" width="32" height="32"/>
+  </tile>
+  <tile id="104">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden20.png" width="32" height="32"/>
+  </tile>
+  <tile id="105">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden21.png" width="32" height="32"/>
+  </tile>
+  <tile id="106">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden22.png" width="32" height="32"/>
+  </tile>
+  <tile id="107">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden23.png" width="32" height="32"/>
+  </tile>
+  <tile id="108">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden24.png" width="32" height="32"/>
+  </tile>
+  <tile id="109">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/runes_golden25.png" width="32" height="32"/>
+  </tile>
+  <tile id="110">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/scull1.png" width="128" height="128"/>
+  </tile>
+  <tile id="111">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/scull2.png" width="128" height="128"/>
+  </tile>
+  <tile id="112">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/scull3.png" width="128" height="128"/>
+  </tile>
+  <tile id="113">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/scull4.png" width="128" height="128"/>
+  </tile>
+  <tile id="114">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/scull5.png" width="128" height="128"/>
+  </tile>
+  <tile id="115">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/scull6.png" width="128" height="128"/>
+  </tile>
+  <tile id="116">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/scull7.png" width="128" height="128"/>
+  </tile>
+  <tile id="117">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/scull8.png" width="128" height="128"/>
+  </tile>
+  <tile id="118">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_column_dark1.png" width="32" height="32"/>
+  </tile>
+  <tile id="119">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_column_dark2.png" width="32" height="32"/>
+  </tile>
+  <tile id="120">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_column_dark3.png" width="32" height="32"/>
+  </tile>
+  <tile id="121">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_column1.png" width="32" height="32"/>
+  </tile>
+  <tile id="122">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_column2.png" width="32" height="32"/>
+  </tile>
+  <tile id="123">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_column3.png" width="32" height="32"/>
+  </tile>
+  <tile id="124">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_stones1.png" width="16" height="16"/>
+  </tile>
+  <tile id="125">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_stones2.png" width="32" height="32"/>
+  </tile>
+  <tile id="126">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_stones3.png" width="32" height="32"/>
+  </tile>
+  <tile id="127">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_stones4.png" width="16" height="16"/>
+  </tile>
+  <tile id="128">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/small_stones5.png" width="16" height="16"/>
+  </tile>
+  <tile id="129">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_platform1.png" width="128" height="128"/>
+  </tile>
+  <tile id="130">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_platform2.png" width="128" height="128"/>
+  </tile>
+  <tile id="131">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_platform3.png" width="128" height="128"/>
+  </tile>
+  <tile id="132">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_platform4.png" width="128" height="128"/>
+  </tile>
+  <tile id="133">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_platform5.png" width="128" height="128"/>
+  </tile>
+  <tile id="134">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_platform6.png" width="128" height="128"/>
+  </tile>
+  <tile id="135">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_roll_base_element.png" width="32" height="32"/>
+  </tile>
+  <tile id="136">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_roll_bat.png" width="128" height="128"/>
+  </tile>
+  <tile id="137">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/spikes_roll_chain.png" width="16" height="16"/>
+  </tile>
+  <tile id="138">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stairs1.png" width="32" height="32"/>
+  </tile>
+  <tile id="139">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stairs2.png" width="32" height="32"/>
+  </tile>
+  <tile id="140">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stairs3.png" width="32" height="32"/>
+  </tile>
+  <tile id="141">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones_dark1.png" width="32" height="32"/>
+  </tile>
+  <tile id="142">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones_dark2.png" width="32" height="32"/>
+  </tile>
+  <tile id="143">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones_dark3.png" width="64" height="64"/>
+  </tile>
+  <tile id="144">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones_dark4.png" width="64" height="64"/>
+  </tile>
+  <tile id="145">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones_dark5.png" width="64" height="64"/>
+  </tile>
+  <tile id="146">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones1.png" width="64" height="64"/>
+  </tile>
+  <tile id="147">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones2.png" width="32" height="32"/>
+  </tile>
+  <tile id="148">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones3.png" width="64" height="64"/>
+  </tile>
+  <tile id="149">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones4.png" width="64" height="64"/>
+  </tile>
+  <tile id="150">
+   <image source="craftpix-671190-dungeon-platformer-pixel-art-tileset/PNG/Details_Objects/stones5.png" width="64" height="64"/>
+  </tile>
+ </tileset>
  <tileset firstgid="212" source="acid-tiles.tsx"/>
  <tileset firstgid="226" source="items.tsx"/>
+ <tileset firstgid="292" source="extraObjects.tsx"/>
+ <tileset firstgid="357" source="walls.tsx"/>
+ <tileset firstgid="391" source="poisonousWater.tsx"/>
+ <tileset firstgid="405" source="barrier.tsx"/>
  <layer id="2" name="background" width="30" height="16">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -46,24 +568,64 @@
 212,212,212,212,212,212,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="3" name="walls" width="30" height="16">
+ <layer id="21" name="poisonousWater" width="30" height="16">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,36,36,36,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,36,36,36,0,0,0,0,0,18,0,12,36,36,36,36,36,36,36,0,0,0,
-36,36,36,36,36,36,36,36,36,37,37,37,36,36,36,36,36,38,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,33,33,33,33,0,0,0,36,36,36,36,36,36,36,222,223,224,36,36,36,36,36,
-0,0,0,0,0,8,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,396,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="20" name="WALLS2" width="30" height="16">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+10,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+12,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,362,361,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,13
+</data>
+ </layer>
+ <layer id="3" name="walls" width="30" height="16">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,384,382,382,382,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,33,33,33,11,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,10,33,11,0,0,0,0,15,0,0,0,12,33,33,33,33,33,34,0,0,0,
+33,33,33,33,33,33,33,33,33,13,0,12,33,33,33,33,13,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,357,358,0,0,0,0,0,
+0,0,0,0,0,0,0,0,41,36,36,36,36,36,36,36,36,36,36,36,36,36,222,223,402,403,36,36,36,36,
+0,0,0,0,0,8,9,0,39,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,8,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,37,37,37,37,37,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,37,37,37,37,37,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,37,37,37,37,37,0,0,0,0,37,37,37,37,37,37,37,0,0,0,0,0,0,0,0,
-223,223,223,223,223,223,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37,37
+0,0,0,0,0,0,36,36,36,36,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,37,37,37,37,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,37,37,37,37,18,0,0,0,0,41,36,36,36,36,36,40,0,0,0,0,0,0,359,360,
+223,223,223,223,223,223,37,37,37,37,19,36,36,36,36,21,37,37,37,37,37,19,36,36,36,36,36,36,36,36
 </data>
  </layer>
  <layer id="7" name="rope" width="30" height="16">
@@ -71,27 +633,51 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,58,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,344,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,344,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,344,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,344,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,58,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,345,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,345,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,345,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
  <objectgroup id="8" name="spawningpoint1" class="Player1Spawn">
-  <object id="23" x="31.725" y="206.213" width="40.9782" height="31.725"/>
+  <object id="23" x="36.722" y="149.747" width="55.9692" height="84.6932"/>
  </objectgroup>
  <objectgroup id="9" name="spawningpoint2" class="Player2Spaown">
-  <object id="24" x="1854.59" y="908.13" width="48.9095" height="29.0813"/>
+  <object id="24" x="1830.65" y="856.021" width="48.9095" height="79.0778"/>
+  <object id="46" x="2124.46" y="332.801"/>
  </objectgroup>
+ <objectgroup id="28" name="barrierObj">
+  <object id="48" x="1691.84" y="94.3888" width="21.4816" height="111.314"/>
+ </objectgroup>
+ <layer id="18" name="SPAWNPOİNT" width="30" height="16">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+295,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,295,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
  <layer id="10" name="heal" width="30" height="16">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -101,7 +687,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,272,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -152,8 +738,13 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="13" name="heal">
+ <objectgroup id="13" name="healObj">
   <object id="1" type="Heal" x="1403.83" y="153.338" width="40.9782" height="38.3344">
+   <properties>
+    <property name="heal" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="39" type="Heal" x="1725.45" y="477.22" width="35.0459" height="35.7915">
    <properties>
     <property name="heal" type="int" value="1"/>
    </properties>
@@ -163,38 +754,98 @@
   <object id="2" x="1590.22" y="166.557" width="47.5876" height="30.4032"/>
  </objectgroup>
  <objectgroup id="15" name="ice" class="Ice">
-  <object id="3" type="Ice" x="703.239" y="518.176" width="313.285" height="50.2313">
+  <object id="3" type="Ice" x="703.239" y="525.672" width="313.285" height="36.7394">
    <properties>
     <property name="friction" type="float" value="0.75"/>
    </properties>
   </object>
+  <object id="45" x="1675.71" y="77.1429" width="244.286" height="35.7143"/>
  </objectgroup>
  <objectgroup id="16" name="wallColliders" class="Wall">
-  <object id="4" x="-3.96563" y="269.663" width="585.592" height="50.2313"/>
-  <object id="5" x="575.017" y="202.247" width="190.35" height="120.291"/>
-  <object id="6" x="758.757" y="265.697" width="382.022" height="51.5532"/>
-  <object id="7" x="1089.23" y="138.797" width="51.5532" height="126.9"/>
-  <object id="8" x="1089.23" y="140.119" width="183.741" height="52.8751"/>
-  <object id="9" x="1230.67" y="191.672" width="40.9782" height="47.5876"/>
-  <object id="10" x="1278.26" y="206.213" width="351.619" height="50.2313"/>
-  <object id="11" x="1624.59" y="204.891" width="105.75" height="51.5532"/>
-  <object id="12" x="1598.15" y="526.107" width="318.572" height="51.5532"/>
-  <object id="13" x="1398.55" y="560.476" width="208.857" height="17.1844"/>
-  <object id="14" x="1020.49" y="527.429" width="397.885" height="48.9095"/>
-  <object id="15" x="504.957" y="519.498" width="200.925" height="47.5876"/>
-  <object id="16" x="321.216" y="585.592" width="122.935" height="37.0126"/>
-  <object id="17" x="187.707" y="713.814" width="128.222" height="37.0126"/>
-  <object id="18" x="387.31" y="770.654" width="317.25" height="245.869"/>
-  <object id="19" x="-2.64375" y="1009.91" width="403.173" height="14.5406"/>
-  <object id="20" x="695.307" y="955.717" width="323.86" height="70.0595"/>
-  <object id="21" x="959.683" y="896.233" width="448.116" height="126.9"/>
-  <object id="22" x="1410.44" y="958.361" width="511.566" height="64.772"/>
+  <object id="4" x="-3.96563" y="269.663" width="591.482" height="33.869"/>
+  <object id="5" x="589.416" y="206.245" width="166.788" height="96.6586"/>
+  <object id="6" x="758.103" y="270.694" width="317.122" height="34.7753"/>
+  <object id="7" x="1034.91" y="142.759" width="41.513" height="124.901"/>
+  <object id="8" x="1077.76" y="142.737" width="252.6" height="33.8948"/>
+  <object id="9" x="1289.57" y="177.928" width="40.9782" height="62.6409"/>
+  <object id="10" x="1332.32" y="206.213" width="377.405" height="35.178"/>
+  <object id="12" x="1664.14" y="526.107" width="252.583" height="96.2728"/>
+  <object id="13" x="1419.19" y="560.476" width="243.28" height="63.624"/>
+  <object id="14" x="1020.49" y="527.429" width="397.885" height="97.0691"/>
+  <object id="15" x="522.842" y="526.098" width="182.532" height="98.6896"/>
+  <object id="18" x="387.31" y="782.863" width="301.572" height="237.345"/>
+  <object id="19" x="-2.64375" y="1014.84" width="403.173" height="9.61137"/>
+  <object id="20" x="691.618" y="975.67" width="283.504" height="50.1062"/>
+  <object id="21" x="974.439" y="911.911" width="420.448" height="111.222"/>
+  <object id="22" x="1398.9" y="975.302" width="523.102" height="47.8305"/>
+  <object id="30" x="1637.96" y="556.988">
+   <polygon points="0,0 24.6952,-33.1195 26.0671,2.71472 -0.685977,4.88649"/>
+  </object>
+  <object id="31" x="1419.15" y="529.682">
+   <polygon points="0,0 0,30.9814 26.4841,27.9832 11.4931,5.9964"/>
+  </object>
+  <object id="33" x="706.837" y="565.304" width="312.862" height="60.4205"/>
+  <object id="49" x="322.238" y="590.652" width="120.397" height="11.3314"/>
+  <object id="52" x="194.759" y="718.839" width="122.521" height="12.7479"/>
+  <object id="54" x="1475.13" y="463.434" width="120.546" height="16.0729"/>
  </objectgroup>
+ <objectgroup id="22" name="acid">
+  <object id="35" x="5.33333" y="792" width="380" height="224"/>
+  <object id="36" x="1434.67" y="537.333" width="214.667" height="34"/>
+ </objectgroup>
+ <objectgroup id="19" name="BUTTON">
+  <properties>
+   <property name="id" type="int" value="1"/>
+  </properties>
+  <object id="32" x="208.375" y="268.839">
+   <polygon points="0,0 0,-6.9958 2.9982,-11.4931 26.9838,-11.9928 31.9808,-8.9946 31.4811,-0.4997"/>
+  </object>
+ </objectgroup>
+ <layer id="26" name="barrier" width="30" height="16">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,421,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
  <objectgroup id="17" name="rope" class="Rope">
-  <object id="25" x="1728.03" y="190.567" width="18.1081" height="319.91"/>
-  <object id="26" x="702.768" y="764.853" width="21.5573" height="194.016"/>
+  <object id="25" x="1712.45" y="194.874" width="14.1105" height="250.446"/>
+  <object id="26" x="704.437" y="768.008" width="16.6281" height="194.016"/>
  </objectgroup>
- <layer id="5" name="portal" width="30" height="16">
+ <layer id="25" name="openportal" width="30" height="16">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,81,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="5" name="closedportal" width="30" height="16">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -224,7 +875,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,60,55,55,55,59,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,55,55,55,55,55,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

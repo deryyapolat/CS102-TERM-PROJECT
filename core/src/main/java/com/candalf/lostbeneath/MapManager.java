@@ -56,6 +56,9 @@ public class MapManager {
             // Load wall objects
             loadWallObjects();
             
+            // Load health objects
+            loadHealthObjects();
+            
             // Process other object layers
             processObjectLayer();
             
@@ -66,19 +69,15 @@ public class MapManager {
     }
     
     private void loadIceObjects() {
-        System.out.println("[ICE] Loading ice objects");
         MapObjects iceObjects = map.getLayers().get("ice").getObjects();
         if (iceObjects != null) {
-            System.out.println("[ICE] Found " + iceObjects.getCount() + " ice objects");
             int iceCount = 0;
             for (RectangleMapObject obj : iceObjects.getByType(RectangleMapObject.class)) {
                 Rectangle rect = obj.getRectangle();
                 iceBlocks.add(new Ice(world, rect.x, rect.y, rect.width, rect.height, obj.getProperties()));
                 iceCount++;
             }
-            System.out.println("[ICE] Created " + iceCount + " ice objects");
         } else {
-            System.out.println("[ICE] No ice layer found in map");
         }
     }
     
@@ -125,6 +124,49 @@ public class MapManager {
         if (!wallsLoaded) {
             System.err.println("[WALLS] No wall objects found in layer 'wallColliders'");
         }
+    }
+    
+    // We'll modify this to return an array of health objects
+    public Heal[] loadHealthObjects() {
+        System.out.println("[HEALTH] Loading health objects from 'heal' layer");
+        Array<Heal> healthObjects = new Array<>();
+        
+        MapObjects mapHealthObjects = map.getLayers().get("heal").getObjects();
+        if (mapHealthObjects != null) {
+            System.out.println("[HEALTH] Found " + mapHealthObjects.getCount() + " health objects");
+            for (RectangleMapObject obj : mapHealthObjects.getByType(RectangleMapObject.class)) {
+                Rectangle rect = obj.getRectangle();
+                
+                // Check if heal amount property exists
+                int healAmount = 1; // Default heal amount
+                if (obj.getProperties().containsKey("heal")) {
+                    try {
+                        healAmount = obj.getProperties().get("heal", Integer.class);
+                    } catch (Exception e) {
+                        String healStr = obj.getProperties().get("heal", String.class);
+                        try {
+                            healAmount = Integer.parseInt(healStr);
+                        } catch (Exception e2) {
+                            System.err.println("[HEALTH] Error parsing heal amount: " + e2.getMessage());
+                        }
+                    }
+                }
+                
+                Heal healthObj = new Heal(world, rect.x, rect.y, rect.width, rect.height, healAmount);
+                healthObjects.add(healthObj);
+                System.out.println("[HEALTH] Created health pickup at: " + rect.x + "," + rect.y + 
+                                 " with heal amount: " + healAmount);
+            }
+        } else {
+            System.out.println("[HEALTH] No health layer found in map");
+        }
+        
+        // Convert to array and return
+        Heal[] result = new Heal[healthObjects.size];
+        for (int i = 0; i < healthObjects.size; i++) {
+            result[i] = healthObjects.get(i);
+        }
+        return result;
     }
     
     private void processObjectLayer() {
@@ -253,9 +295,18 @@ public class MapManager {
             );
             
             if (playerBounds.overlaps(wallBounds)) {
-                // Apply wall effect like ice effect
-                wall.applyWallEffect(player);
-                System.out.println("Player on wall: " + player.getPosition());
+                // Calculate if player's bottom is above the wall's top
+                float playerBottom = player.getY() - 32; // Bottom of player bounds
+                float wallTop = wall.getY() - wall.getHeight()/2 + wall.getHeight(); // Top of wall
+                
+                // Only apply wall effects if player isn't standing on top of the wall
+                // (add a small buffer of 10 units to prevent side collisions when near top)
+                if (playerBottom < wallTop - 10) {
+                    wall.applyWallEffect(player);
+                } else {
+                    // Player is on top of the wall, enable jumping but don't apply side effects
+                    player.setCanJump(true);
+                }
             }
         }
     }

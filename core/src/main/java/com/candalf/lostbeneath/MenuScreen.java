@@ -35,7 +35,6 @@ public class MenuScreen extends AbstractScreen
     public MenuScreen(Main game)
     {
         super(game);
-
     }
 
     @Override

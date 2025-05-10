@@ -48,16 +48,30 @@ public class Wall extends GameObject {
     }
     
     public void applyWallEffect(Player player) {
-        // Enable jumping when on wall
-        player.setCanJump(true);
+        // Get player position and wall bounds to determine spatial relationship
+        Vector2 playerPos = player.getBody().getPosition();
+        float playerBottom = playerPos.y - player.getBounds().height/2;
+        float wallTop = bounds.y + bounds.height;
         
-        Body playerBody = player.getBody();
-        Vector2 vel = playerBody.getLinearVelocity();
+        // Check if player is standing on top of the wall or beside it
+        boolean isOnTop = (playerBottom >= wallTop - 5f); // Player is on top if feet are near or above the wall top
         
-        // Allow sliding down walls much faster, but still with some control
-        if (vel.y < 0) {
-            // Apply wall sliding speed (faster than before, but not as fast as free-falling)
-            playerBody.setLinearVelocity(vel.x, -15f); // Fast wall sliding speed matching the increased gravity
+        if (isOnTop) {
+            // Player is on top of the wall, treat as ground
+            player.setCanJump(true);
+        } else {
+            // Player is beside the wall, enable wall sliding/jumping
+            Body playerBody = player.getBody();
+            Vector2 vel = playerBody.getLinearVelocity();
+            
+            // Enable jumping when on wall
+            player.setCanJump(true);
+            
+            // Allow sliding down walls much faster, but still with some control
+            if (vel.y < 0) {
+                // Apply wall sliding speed (faster than before, but not as fast as free-falling)
+                playerBody.setLinearVelocity(vel.x, -15f); // Fast wall sliding speed matching the increased gravity
+            }
         }
     }
     

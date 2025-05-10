@@ -21,6 +21,10 @@ public class Player extends Entity {
     protected float speed;
     private PlayerAnimation animation;
     private PlayerAnimation.PlayerState currentState;
+    private float hurtTimer; // Timer for hurt animation
+    private static final float HURT_ANIMATION_DURATION = 0.5f; // Duration of hurt animation in seconds
+    private boolean isPoisoned; // Track if player is in poison/acid
+    private float poisonEffectTimer; // For visual effects when poisoned
     
     // Add a new field to track player type
     private final boolean isKnight;
@@ -52,6 +56,11 @@ public class Player extends Entity {
         this.force = new Vector2(); // Initialize force vector
         this.currentState = PlayerAnimation.PlayerState.IDLE;
         this.isKnight = isKnight;
+        this.hurtTimer = 0; // Initialize the hurt timer
+        this.isPoisoned = false; // Initialize poisoned state
+        this.poisonEffectTimer = 0; // Initialize poison effect timer
+        this.isPoisoned = false; // Initialize poisoned state
+        this.poisonEffectTimer = 0; // Initialize poison effect timer
         
         // Initialize Box2D body
         BodyDef bodyDef = new BodyDef();
@@ -137,7 +146,33 @@ public class Player extends Entity {
         position.set(body.getPosition().x - width/2, body.getPosition().y - height/2);
         bounds.setPosition(position.x, position.y);
 
-       
+        // Update hurt timer - only reset animation if not in poison
+        if (currentState == PlayerAnimation.PlayerState.HURT && !isPoisoned) {
+            hurtTimer += delta;
+            if (hurtTimer >= HURT_ANIMATION_DURATION) {
+                hurtTimer = 0;
+                currentState = PlayerAnimation.PlayerState.IDLE;
+            }
+        }
+        
+        // Update poison effect timer
+        if (isPoisoned) {
+            poisonEffectTimer += delta;
+            
+            // While in poison, ensure the HURT animation is playing - but don't override DYING
+            if (currentState != PlayerAnimation.PlayerState.HURT && 
+                currentState != PlayerAnimation.PlayerState.DYING) {
+                setAnimationState(PlayerAnimation.PlayerState.HURT);
+            }
+            
+            // Reset hurt timer to keep animation going while in poison
+            hurtTimer = 0;
+        }
+        
+        // Check if player has 0 health and make sure the DYING state is applied
+        if (health <= 0 && currentState != PlayerAnimation.PlayerState.DYING) {
+            setAnimationState(PlayerAnimation.PlayerState.DYING);
+        }
         
         // Only update animation based on current state and direction
         if (animation != null) {
@@ -149,10 +184,14 @@ public class Player extends Entity {
     @Override
     public void render(SpriteBatch batch) {
         TextureRegion currentFrame = animation.getCurrentFrame();
-        batch.draw(currentFrame, 
-                  position.x, position.y,
-                  width, height);
-    }
+        
+        // If poisoned, apply a green tint effect
+        
+            // Normal rendering
+            batch.draw(currentFrame, 
+                      position.x, position.y,
+                      width, height);
+        }
 
     public void setCanJump(boolean canJump) {
         this.canJump = canJump;
@@ -174,16 +213,58 @@ public class Player extends Entity {
     }
 
     public void heal(int amount) {
+        if (amount <= 0) {
+            return;
+        }
+        
+        // Store original health value
+        int oldHealth = health;
+        
+        // Add health points, capped at max health
         health = Math.min(health + amount, maxHealth);
+        
+        // CRITICAL FIX: Force heal at least 1 point if health is below max
+        // This guarantees healing even in edge case scenarios
+        if (oldHealth == health && oldHealth < maxHealth) {
+            health = Math.min(oldHealth + 1, maxHealth);
+        }
+        
+        // IMPORTANT: Only reset animation if we're not in poison
+        // And make sure we're changing state properly
+        if (currentState == PlayerAnimation.PlayerState.HURT && !isPoisoned) {
+            setAnimationState(PlayerAnimation.PlayerState.IDLE);
+        }
+        
+        // Special case: If we're in DYING state but health is now above 0, correct the state
+        if (currentState == PlayerAnimation.PlayerState.DYING && health > 0) {
+            setAnimationState(PlayerAnimation.PlayerState.IDLE);
+        }
     }
 
     public void damage(int amount) {
+        // Always apply damage regardless of current state
+        health = Math.max(0, health - amount);
+        
+        // Only update animation state if not already hurt or dying
         if (currentState != PlayerAnimation.PlayerState.HURT && currentState != PlayerAnimation.PlayerState.DYING) {
-            health = Math.max(0, health - amount);
             if (health > 0) {
                 currentState = PlayerAnimation.PlayerState.HURT;
+                hurtTimer = 0; // Reset hurt timer when taking new damage
+                animation.resetStateTime();
+            } else {
+                // Health is 0 or less, player is dying
+                currentState = PlayerAnimation.PlayerState.DYING;
                 animation.resetStateTime();
             }
+        } else if (currentState == PlayerAnimation.PlayerState.HURT && health <= 0) {
+            // If we were hurt and health went to zero, transition to DYING
+            currentState = PlayerAnimation.PlayerState.DYING;
+            animation.resetStateTime();
+        }
+        
+        // Reset hurt timer if already in hurt state to extend the animation
+        if (currentState == PlayerAnimation.PlayerState.HURT) {
+            hurtTimer = 0;
         }
     }
 
@@ -270,9 +351,42 @@ public class Player extends Entity {
     }
     
     /**
+     * Sets the poisoned state of the player
+     */
+    public void setPoisoned(boolean poisoned) {
+        this.isPoisoned = poisoned;
+        if (poisoned) {
+            poisonEffectTimer = 0; // Reset timer when entering poison
+            // Set animation to HURT when entering poison
+            if (currentState != PlayerAnimation.PlayerState.HURT && currentState != PlayerAnimation.PlayerState.DYING) {
+                setAnimationState(PlayerAnimation.PlayerState.HURT);
+            }
+        } else {
+            // When leaving poison, return to normal state if we were in HURT state
+            if (currentState == PlayerAnimation.PlayerState.HURT) {
+                setAnimationState(PlayerAnimation.PlayerState.IDLE);
+            }
+        }
+    }
+    
+    /**
+     * Check if player is currently poisoned
+     */
+    public boolean isPoisoned() {
+        return isPoisoned;
+    }
+    
+    /**
      * Check if this player is a knight
      */
     public boolean isKnight() {
         return isKnight;
+    }
+    
+    /**
+     * Get the current animation state
+     */
+    public PlayerAnimation.PlayerState getCurrentState() {
+        return currentState;
     }
 }

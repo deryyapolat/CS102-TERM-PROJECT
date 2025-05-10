@@ -11,7 +11,6 @@ import com.badlogic.gdx.physics.box2d.World;
 public class PlayerA extends Player {
     private Animation<TextureRegion> animation;
     private float stateTime;
-    private int health;
     private boolean hasKey;
     private static final float PLAYER_WIDTH = 64;
     private static final float PLAYER_HEIGHT = 64;
@@ -20,7 +19,6 @@ public class PlayerA extends Player {
         super(world, x, y, 5, 2000f, true);  // Knight character
         this.animation = animation;
         this.stateTime = 0;
-        this.health = 100;
         
         // Set up Box2D body properties
         body.setFixedRotation(true);
@@ -101,7 +99,7 @@ public class PlayerA extends Player {
     }
 
     public void heal(int amount) {
-        health = Math.min(health + amount, 100);
+        super.heal(amount);
     }
 
     public boolean hasKey() {
@@ -113,10 +111,10 @@ public class PlayerA extends Player {
     }
 
     public void damage(int amount) {
-        health = Math.max(health - amount, 0);
+        super.damage(amount);
     }
 
     public void setOnIce(boolean onIce) {
-        // Logic to handle ice state
+        super.onIce = onIce; // Properly set the parent class's onIce property
     }
 }
