@@ -1,33 +1,66 @@
 # lostbeneath
+This is a group project made with 5 student for the CS 102 term project.  
+This README file contains the game features, gameplay mechanisms, user interface and team members.
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+Lost Beneath is a 2D cooperative platform game developed as part of a university project.  
+The game focuses on teamwork between two characters as they try to escape the castle of Hades by solving level challenges together.
 
-This project was generated with a template including simple application launchers and a main class extending `Game` that sets the first screen.
+## Game Features
+* Two Playable Characters
+  The game is designed for two players who must cooperate to progress through the levels.
+* Sound Control
+  Players can turn the game sound on or off through the options menu.
+* Custom Key Bindings
+  Players can change the keyboard keys used to control the characters.
+* Story Section
+  Players can read the background story of the characters and the mythology behind the game.
+* Health System
+  Characters have a health bar that decreases when they take damage.
+* Fire Damage
+  Touching flames reduces the player's health.
+* Spike Damage
+  Spikes also damage the characters and act as environmental hazards.
+* Poisonous Water Damage
+  Poisonous water damage the characters as long as they are in the water.
+* Health Pickup
+  Collecting hearts increases the player’s health.
+* Potion Power-Up
+  When a player collects an elixir, their size temporarily decreases, allowing them to pass through smaller areas.
+* Buttons and Doors
+  Pressing buttons opens doors and activates mechanisms.
+* Key and Portal System
+  Collecting a key unlocks a portal that allows players to progress in the level.
+* Rope Climbing
+  Players can climb ropes to reach higher platforms.
 
-## Platforms
+# Gameplay Mechanics
+The game levels include various environmental challenges such as:
+* flames
+* poisonous water
+* spikes
+* keys and portals
+* buttons and doors
+* slopes and platforms
+* ropes for vertical movement
+These mechanics encourage cooperative gameplay, where both players must work together to progress through the level .
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
 
-## Gradle
+# User Interface
+The game includes several interface elements:
+* Start Screen
+* Options Menu
+* Credits Page
+* Key Swap Interface
+* Volume Control
+* Storyline Interface
+* Leaderboard
+These interfaces help improve the player experience and provide better control over the game settings .
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+# Team Members
+* Aras Soylu
+* Arda Akın
+* Derya Polat
+* Mehmet Can Bastem
+* Sinem Yıldırım
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
-
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+The characters are inspired by Orpheus and Eurydice from Greek mythology, who must cooperate to overcome obstacles and escape the underworld.
